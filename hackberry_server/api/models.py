@@ -12,10 +12,12 @@ class ActiveGames(models.Model):
 	playerB = models.PositiveIntegerField()
 	isTurnA = models.BooleanField()
 	needOpponent = models.BooleanField()
+	scoreA = models.PositiveIntegerField()
+	scoreB = models.PositiveIntegerField()
+	lastPlayedWord = models.CharField(max_length=50)
 	
 class Player(models.Model):
 	name = models.CharField(max_length=100)
-	
 	
 class PlayedWords(models.Model):
 	game = models.ForeignKey(ActiveGames)
